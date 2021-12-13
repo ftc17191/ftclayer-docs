@@ -1,0 +1,101 @@
+---
+sidebar_position: 1
+---
+
+# Getting Started
+
+import { useState } from 'react';
+import Link from '@docusaurus/Link';
+
+export const SelectionHelper = (props) => {
+  const [recommended, setRecommended] = useState('');
+  const [stage, setStage] = useState(0);
+  return (
+    <>
+      {stage === 0 ? (
+        <>
+          <p>Step 1: Do you have any code written yet?</p>
+          <div
+            className="pagination-nav docusaurus-mt-lg"
+            style={{ marginTop: 0 }}
+          >
+            <div className="pagination-nav__item">
+              <Link
+                className="pagination-nav__link"
+                onClick={() => {
+                  setStage(1);
+                }}
+              >
+                <p style={{ cursor: 'pointer', color: '#ff6600' }}>
+                  No, I don't have any code written
+                </p>
+              </Link>
+            </div>
+            <div className="pagination-nav__item">
+              <Link to="installation/existing" className="pagination-nav__link">
+                <p style={{ cursor: 'pointer' }} onClick={() => {}}>
+                  Yes, I want to install to an existing project
+                </p>
+              </Link>
+            </div>
+          </div>
+        </>
+      ) : (
+        <>
+          <a
+            style={{ cursor: 'pointer', color: '#ff6600' }}
+            onClick={() => {
+              setStage(0);
+            }}
+          >
+            « Back
+          </a>
+          <br />
+          <p>
+            Step 2: Do you want{' '}
+            <a href="https://learnroadrunner.com/">roadrunner</a> installed?
+          </p>
+          <div
+            className="pagination-nav docusaurus-mt-lg"
+            style={{ marginTop: 0 }}
+          >
+            <div className="pagination-nav__item">
+              <Link
+                className="pagination-nav__link"
+                to="installation/new-with-roadrunner"
+              >
+                <p style={{ cursor: 'pointer', color: '#ff6600' }}>
+                  I want roadrunner pre-installed
+                </p>
+              </Link>
+            </div>
+            <div className="pagination-nav__item">
+              <Link
+                to="installation/new-without-roadrunner"
+                className="pagination-nav__link"
+              >
+                <p style={{ cursor: 'pointer' }} onClick={() => {}}>
+                  I don't need roadrunner pre-installed
+                </p>
+              </Link>
+            </div>
+          </div>
+        </>
+      )}
+    </>
+  );
+};
+
+Let's discover FTCLayer!
+
+## What _is_ FTCLayer?
+
+FTC Layer is an open source project designed to provide abstractions over the base FTC SDK FTC Layer is designed to make programming easier, less time consuming, and simpler.
+
+If you are really interested, check out the [github repo](https://github.com/ftc17191/FTCLayer)!
+
+## Install FTCLayer
+
+We provide you with 3 options for installing FTCLayer. Lets figure out which is best for you!
+
+<SelectionHelper />
