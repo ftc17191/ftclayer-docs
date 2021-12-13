@@ -6,7 +6,7 @@ const config = {
   title: 'FTCLayer documentation',
   tagline: 'Make FTC programming easy',
   url: 'https://ftclayer-docs.pages.dev',
-  baseUrl: 'FTCLayer-website/',
+  baseUrl: '/',
   onBrokenLinks: 'warn',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
