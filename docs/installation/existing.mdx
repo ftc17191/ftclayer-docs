@@ -1,0 +1,99 @@
+---
+sidebar_position: 1
+---
+
+# Install in an existing project
+
+Inside the Project root (The first build.gradle you see), open the build.gradle file:
+
+![Which build.gradle file to select](https://github.com/ftc17191/FTCLayer/raw/master/Documentation/assets/img/root-build-gradle.png)
+
+In that file, find the `allprojects` block:
+
+```js {18-24}
+/**
+ * Top-level build file for ftc_app project.
+ *
+ * It is extraordinarily rare that you will ever need to edit this file.
+ */
+buildscript {
+    repositories {
+        google()
+        jcenter()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:4.0.1'
+    }
+}
+
+// This is now required because aapt2 has to be downloaded from the
+// google() repository beginning with version 3.2 of the Android Gradle Plugin
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+    }
+}
+```
+
+and modify it to:
+
+```js
+allprojects {
+    repositories {
+        mavenCentral()
+        google()
+        jcenter()
+        maven { url 'https://jitpack.io' }
+    }
+}
+```
+
+Afterwards, open the `build.gradle` file inside of `TeamCode` folder:
+
+![Which build.gradle file to select](https://github.com/ftc17191/FTCLayer/raw/master/Documentation/assets/img/teamcode-build-gradle.png)
+
+and find the lines:
+
+```js {21-24}
+//
+// build.gradle in TeamCode
+//
+// Most of the definitions for building your module reside in a common, shared
+// file 'build.common.gradle'. Being factored in this way makes it easier to
+// integrate updates to the FTC into your code. If you really need to customize
+// the build definitions, you can place those customizations in this file, but
+// please think carefully as to whether such customizations are really necessary
+// before doing so.
+
+
+// Custom definitions may go here
+
+// Include common definitions from above.
+apply from: '../build.common.gradle'
+
+repositories {
+    maven { url = "https://dl.bintray.com/first-tech-challenge/ftcsdk/" }
+}
+
+dependencies {
+    implementation project(':FtcRobotController')
+    annotationProcessor files('lib/OpModeAnnotationProcessor.jar')
+}
+```
+
+and update it to:
+
+```js
+dependencies {
+    implementation project(':FtcRobotController')
+    annotationProcessor files('lib/OpModeAnnotationProcessor.jar')
+
+    implementation 'com.github.ftc17191:ftclayer:+'
+}
+```
+
+Finally, perform a gradle sync by pressing the elephant icon in the top right of the screen.
+
+![Elephant icon location](https://github.com/ftc17191/FTCLayer/raw/master/Documentation/assets/img/gradle-sync.png)
