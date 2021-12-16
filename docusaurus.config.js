@@ -1,5 +1,102 @@
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+const codeTheme = {
+  "plain": {
+    "color": "#a9b7c6",
+    "backgroundColor": "#232525"
+  },
+  "styles": [
+    {
+      "types": [
+        "punctuation",
+        "comment"
+      ],
+      "style": {
+        "color": "rgb(128, 128, 128)"
+      }
+    },
+    {
+      "types": [
+        "string"
+      ],
+      "style": {
+        "color": "rgb(106, 135, 89)"
+      }
+    },
+    {
+      "types": [
+        "number"
+      ],
+      "style": {
+        "color": "rgb(104, 151, 187)"
+      }
+    },
+    {
+      "types": [
+        "builtin",
+        "keyword"
+      ],
+      "style": {
+        "color": "rgb(204, 120, 50)"
+      }
+    },
+    {
+      "types": [
+        "variable"
+      ],
+      "style": {
+        "color": "rgb(152, 118, 170)"
+      }
+    },
+    {
+      "types": [
+        "class-name",
+        "function"
+      ],
+      "style": {
+        "color": "rgb(169, 183, 198)"
+      }
+    },
+    {
+      "types": [
+        "tag"
+      ],
+      "style": {
+        "color": "rgb(204, 107, 46)"
+      }
+    },
+    {
+      "types": [
+        "attr-name"
+      ],
+      "style": {
+        "color": "rgb(186, 186, 138)"
+      }
+    },
+    {
+      "types": [
+        "deleted"
+      ],
+      "style": {
+        "color": "rgb(249, 38, 114)"
+      }
+    },
+    {
+      "types": [
+        "inserted"
+      ],
+      "style": {
+        "color": "rgb(166, 226, 46)"
+      }
+    },
+    {
+      "types": [
+        "changed"
+      ],
+      "style": {
+        "color": "rgb(230, 219, 116)"
+      }
+    }
+  ]
+};
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -23,7 +120,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/ftc17191/FTCLayer-website/edit/main/',
+          editUrl: 'https://github.dev/ftc17191/FTCLayer-docs/blob/master/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -49,7 +146,7 @@ const config = {
             label: 'Getting Started',
           },
           {
-            href: 'https://github.com/ftc17191/FTCLayer-website',
+            href: 'https://github.com/ftc17191/FTCLayer-docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -67,30 +164,34 @@ const config = {
               },
             ],
           },
+          // {
+          //   title: 'Community',
+          //   items: [
+          //     {
+          //       label: 'Discord',
+          //       href: 'https://discordapp.com/invite/docusaurus',
+          //     },
+          //   ],
+          // },
           {
-            title: 'Community',
+            title: 'GitHub',
             items: [
               {
-                label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                label: 'Docs',
+                href: 'https://github.com/ftc17191/FTCLayer-docs',
               },
-            ],
-          },
-          {
-            title: 'More',
-            items: [
               {
-                label: 'GitHub',
-                href: 'https://github.com/ftc17191/FTCLayer-website',
-              },
+                label: 'Source Code',
+                href: 'https://github.com/ftc17191/FTCLayer',
+              }
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} FTCLayer. Built with Docusaurus. Hosted on Cloudflare Pages`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: codeTheme,
+        additionalLanguages: ['java']
       },
     }),
 };
