@@ -41,32 +41,35 @@ Now to drive the robot!
 
 In your code, there is a place where it will loop constantly. 
 
-It may be inside of:
+It may be inside your while statement:
 
 ```java
+waitForStart();
+
 while(opModeIsActive())
 {
-
+    // Here!
 }
 ```
 
-Or inside of:
+Or inside a loop function:
 
 ```java
 @Override
 void loop()
 {
+    // Here!
 
 }
 ```
 
-Inside of whichever your code uses you need to place the line:
+Inside  whichever your code uses you need to place the line:
 ```java            
                 //  Forward                Strafe                 Turn
 mecanum.powerDrive(gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
 ```
 
-## What if its reversed?
+## What if a control reversed?
 Due to how your mecanum train may be built, some controls may be reversed, if something is reversed, 
 then add a subtraction sign before what control is reversed.
 
@@ -78,26 +81,28 @@ Like so:
 mecanum.powerDrive(-gamepad1.left_stick_y, gamepad1.left_stick_x, gamepad1.right_stick_x);
 ```
 
-## Full code
-This uses everything said above.
+## Full example
+This example uses all code above, and a basic op-mode.
 
 ```java
 package org.firstinspires.ftc.teamcode.driverop;
 
 import com.qualcomm.robotcore.eventloop.opmode.LinearOpMode;
-
 import org.ftc17191.ftclayer.drivetrain.mecanum.Mecanum;
 
 public class CodeExample extends LinearOpMode
 {
-    Mecanum mecanum = new Mecanum(hardwareMap,
+    Mecanum mecanum;
+
+    @Override
+    public void runOpMode(){
+
+        waitForStart();
+        mecanum = new Mecanum(hardwareMap,
             "front_right",
              "front_left",
             "back_right",
              "back_left");
-    @Override
-    public void runOpMode(){
-
         while (opModeIsActive())
         {
             mecanum.powerDrive(gamepad1.left_stick_y,
