@@ -23,7 +23,7 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/ftc17191/FTCLayer-website/edit/main/',
+          editUrl: 'https://github.com/ftc17191/ftclayer-docs/edit/main/',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -49,7 +49,7 @@ const config = {
             label: 'Getting Started',
           },
           {
-            href: 'https://github.com/ftc17191/FTCLayer-website',
+            href: 'https://github.com/ftc17191/ftclayer-docs',
             label: 'GitHub',
             position: 'right',
           },
@@ -81,7 +81,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/ftc17191/FTCLayer-website',
+                href: 'https://github.com/ftc17191/ftclayer-docs',
               },
             ],
           },
