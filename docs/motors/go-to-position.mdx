@@ -1,0 +1,55 @@
+---
+sidebar_position: 1
+---
+
+# Controlling a motor with power
+
+All motors take power, thats how they get energy to move.
+By changing your power in the code, your changing the amount of energy that physically flows in the wires.
+
+## Creating the motor variable.
+First, we need to import the MotorEx variable.
+At the top of your file you have to add a line that says:
+```java
+import com.ftc17191.ftclayer.hardware.motors.motorex.MotorEx;
+```
+To create the motor, you must create a variable with type `MotorEx` and pass the id you specified in your configuration, and a special variable called `hardwareMap`.
+
+Like so:
+```java
+MotorEx motor = new MotorEx(hardwareMap, "motorid");
+```
+
+## Controlling the power
+Then, to apply power to the motor, use the `.setPower()` function to set the motors power between 1 and -1.
+
+```java
+// Positives spin the motor counter clockwise (unless specified by the manufacturer)
+motor.setPower(1);
+```
+
+To stop the the motor's turning, set the power to zero
+
+```java
+// Zeroes stop turning, however it may still coast. 
+motor.setPower(0);
+```
+
+## What if my motors is coasting after it is supposed to stop.
+
+Thats where Zero Power Modes come in.
+
+Motors, have 2 options. They can keep running with the leftover energy, called floating. Or, they can stop immediately and resist all outside movement, called braking.
+
+To set the motor to brake when no power is applied, simply use the follwing line:
+
+```java
+motor.dcMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.BRAKE);
+```
+
+Instead, if you want the motor to float. Use this line.
+
+
+```java
+motor.dcMotor.setZeroPowerBehavior(DcMotor.ZeroPowerBehavior.FLOAT);
+```

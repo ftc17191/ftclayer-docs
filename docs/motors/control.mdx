@@ -1,0 +1,40 @@
+---
+sidebar_position: 1
+---
+
+# Controlling motors
+
+To control motors you have 3 options.
+
+1. Power
+2. Run to position
+3. Velocity
+
+Let me break down what each one is.
+
+## Power
+
+All motors use power in some form, using power to control your robot directly changes the amount of
+electricity being sent to your robot.
+
+
+## Run to Position
+
+Many motors have little trackers in the called encoders. Encoders measure how far a motor has moved, and the speed of
+the movement. Encoders can also be used to set how far something a motor should turn and then stay at that spot. Encoders
+are similar to servos in that they can be used to go to a specific location accurately.
+
+
+## Velocity
+
+Using encoders, Velocity can be used to set the speed of a motor instead of setting the amount of power that goes to a
+motor which results in much more accurate and consistent speeds.
+
+For example, you can set the motor to go 4 kilometers per hour, instead of just giving it power.
+
+
+## Which on should I use?
+
+If you are controlling the specific position of a motor, or want to create boundaries for which the motor can
+not move past, use (Go to Position)[./go-to-position].
+
