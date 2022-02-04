@@ -5,7 +5,7 @@ on:
     branches: [master]
     paths: [website/**]
   workflow_dispatch:
-
+  
 
 jobs:
   deploy:
@@ -36,8 +36,4 @@ jobs:
           # The GH actions bot is used by default if you didn't specify the two fields.
           # You can swap them out with your own user credentials.
           user_name: github-actions[bot]
-<<<<<<< HEAD
           user_email: 41898282+github-actions[bot]@users.noreply.github.com
-=======
-          user_email: 41898282+github-actions[bot]@users.noreply.github.com
->>>>>>> 858545c2f1862194f824bd1dd46f69eeaa14e8a4

@@ -11,7 +11,7 @@ const config = {
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
   organizationName: 'ftc17191', // Usually your GitHub org/user name.
-  projectName: 'ftclayer-docs', // Usually your repo name.
+  projectName: 'ftclayer', // Usually your repo name.
   deploymentBranch: 'gh-pages',
 
 
