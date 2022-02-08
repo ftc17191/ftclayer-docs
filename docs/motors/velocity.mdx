@@ -1,0 +1,22 @@
+---
+sidebar_position: 3
+---
+
+# Controlling a motor with velocity
+
+All motors use power. However, the downside with directly controlling the power is that you can't
+give the motor an exact speed for it to follow.
+
+For example, lets say we give a motor .5 power. It will run at about half of full speed, but we cant really get an exact speed. Heres where velocity comes in.
+
+Using velocity, we can set the motor run to at a certain number of Ticks per Minute, or Rotations per Minute. 
+
+> Don't know what ticks are? (Click Here)[./ticks]!
+
+To set a motors velocity using Ticks per Minute, use the following line:
+
+```java
+motor.setMotorVelocityTPM(100);
+```
+
+The example will move our motor to go 100 Ticks per MInute.
