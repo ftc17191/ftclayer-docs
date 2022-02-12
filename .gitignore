@@ -59,3 +59,8 @@ yarn-error.log*
 .docusaurus/docusaurus-plugin-content-docs/default/version-current-metadata-prop-751.json
 .docusaurus/docusaurus-plugin-content-pages/default/site-src-pages-markdown-page-md-393.json
 .docusaurus/docusaurus-plugin-debug/default/docusaurus-debug-all-content-673.json
+
+.idea/
+
+package.json
+package-lock.json
