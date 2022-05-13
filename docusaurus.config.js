@@ -9,7 +9,7 @@ const config = {
   baseUrl: "/",
   onBrokenLinks: "warn",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/logo.svg",
   organizationName: "ftc17191", // Usually your GitHub org/user name.
   projectName: "ftclayer-docs", // Usually your repo name.
   deploymentBranch: "gh-pages",
@@ -63,15 +63,6 @@ const config = {
               {
                 label: "Getting Started",
                 to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
               },
             ],
           },
